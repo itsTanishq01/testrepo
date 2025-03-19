@@ -38,6 +38,10 @@ class SoilFeatures(BaseModel):
     Rainfall_mm: float
     Humidity_: float
     Solar_Radiation_W_m2: float
+    
+@app.get("/")
+def home():
+    return {"message": "Soil and Crop Prediction API is running!"}
 
 @app.post("/predict/")
 def predict(features: SoilFeatures):
